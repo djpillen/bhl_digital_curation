@@ -2,7 +2,7 @@
 
 echo "Updating and installing dependencies"
 apt-get -y update
-apt -y install autoconf automake build-essential git git-core libtool openjdk-8-jdk p7zip-full python3-pip python3-venv unzip
+apt -y install autoconf automake build-essential cifs-utils git git-core libtool openjdk-8-jdk p7zip-full python3-pip python3-venv unzip
 
 echo "Setting up Python virtual environment"
 mkdir -p /usr/share/bhl_digital_curation/virtualenvs
