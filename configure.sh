@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
 echo "Updating and installing dependencies"
-apt-get -y update
-apt -y install autoconf automake build-essential cifs-utils git git-core libtool openjdk-8-jdk p7zip-full python3-pip python3-venv unzip
+add-apt-repository -y ppa:stebbins/handbrake-releases
+apt-get -y update && apt-get -y upgrade
+apt -y install autoconf automake build-essential cifs-utils ffmpeg git git-core handbrake-cli libtool openjdk-8-jdk p7zip-full python3-pip python3-venv unzip
 
 echo "Setting up Python virtual environment"
 mkdir -p /usr/share/bhl_digital_curation/virtualenvs
-cd /usr/share
-chown -R vagrant:vagrant bhl_digital_curation
-cd bhl_digital_curation/virtualenvs
+cd /usr/share/bhl_digital_curation/virtualenvs
 python3 -m venv venv
-
+chown -R vagrant:vagrant /usr/share/bhl_digital_curation
 
 # https://github.com/timothyryanwalsh/brunnhilde
 cd /home/vagrant
@@ -58,6 +57,13 @@ echo "Installing aip-repackaging scripts"
 /usr/share/bhl_digital_curation/virtualenvs/venv/bin/pip install git+https://github.com/bentley-historical-library/DAPPr.git
 /usr/share/bhl_digital_curation/virtualenvs/venv/bin/pip install git+https://github.com/djpillen/aip-repackaging.git
 
+echo "Installing bhl_born_digital_utils"
+cd /home/vagrant
+git clone https://github.com/bentley-historical-library/bhl_born_digital_utils.git
+cd bhl_born_digital_utils
+/usr/share/bhl_digital_curation/virtualenvs/venv/bin/pip install -r requirements.txt
+
+echo "Adding virtualenv to bashrc"
 echo "source /usr/share/bhl_digital_curation/virtualenvs/venv/bin/activate" >> /home/vagrant/.bashrc
 
 echo "Cleaning up"
