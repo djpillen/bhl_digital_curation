@@ -1,0 +1,16 @@
+[prod]
+backend_url = https://aspace-prod-api.edu
+frontend_url = https://aspace-prod.edu
+username = USERNAME
+
+[test]
+backend_url = https://aspace-test-api.edu
+frontend_url = https://aspace-test.edu
+username = USERNAME
+
+[vagrant]
+backend_url = http://localhost:8089
+frontend_url = http://localhost:8080
+username = admin
+password = admin
+

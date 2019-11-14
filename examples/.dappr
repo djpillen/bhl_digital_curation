@@ -1,0 +1,21 @@
+[prod]
+base_url = https://dspace-url.edu
+email = USER_EMAIL
+password = PASSWORD
+group_bentley_only_long_name = Bentley Only Users
+group_bentley_only_id = GROUP_ID
+group_bentley_only_description = Archival materials. Access restricted to Bentley Reading Room.
+group_um_users_long_name = UM Users
+group_um_users_id = GROUP_ID
+group_um_users_description = Archival materials. Access restricted to UM Users.
+group_bentley_staff_long_name = BentleyStaff
+group_bentley_staff_id = GROUP_ID
+group_bentley_staff_description = Archival materials. Access restricted to Bentley staff.
+
+[dev]
+base_url = https://dev.dspace.edu
+email = USER_EMAIL
+password = PASSWORD
+group_bentley_staff_long_name = BentleyStaff
+group_bentley_staff_id = GROUP_ID
+group_bentley_staff_description = Archival materials. Access restricted to Bentley staff.

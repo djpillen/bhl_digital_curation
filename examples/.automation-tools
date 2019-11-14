@@ -1,0 +1,24 @@
+[ts_locations]
+bhl_digitalarchive_uuid = UUID
+bhl_digitalarchive_path = /path/to/bhl-digitalarchive
+bhl_dropbox_uuid = UUID
+bhl_dropbox_path = /path/to/bhl-dropbox
+
+[credentials]
+am_user = AM_USERNAME
+am_api_key = AM_API_KEY
+ss_user = SS_USERNAME
+ss_api_key = SS_API_KEY
+
+[defaults]
+databasefile = /vagrant/automation-tools/data/transfers.db
+logfile = /vagrant/automation-tools/data/transfers.log
+pidfile = /vagrant/automation-tools/data/transfers-pid.lck
+scriptextensions = .py:.sh
+processing_config = /vagrant/automation-tools/default_config/automatedProcessingMCP.xml
+log_level = DEBUG
+transfer_type = unzipped bag
+
+[urls]
+am_url = http://archivematica-url.edu
+ss_url = http://archivematica-url.edu:8000
